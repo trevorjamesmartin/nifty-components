@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react'
-import noImage from './NoImage.svg'
 /**
  * render image or spinner
  *
@@ -30,13 +29,6 @@ function ImageSpinner(props) {
         imageRef.current = newImage // point reference to loaded image
         setLoaded(true) // toggle state
       }
-    }
-    // newImage.onerror = () => {
-    //   imageRef.current = <img src={noImage} alt='image not found' />
-    // }
-    newImage.onError = (e) => {
-      e.target.onerror = null
-      e.target.src = noImage
     }
     newImage.alt = 'preview image' // accessibility
     Object.keys(rest).forEach((key) => {
