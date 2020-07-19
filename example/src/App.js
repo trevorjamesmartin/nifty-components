@@ -1,7 +1,7 @@
 import React from 'react'
 import { ImageSpinner } from 'nifty-components'
 // import logo from "./logo.svg";
-import './App.css'
+//import './App.css'
 
 function App() {
   return (

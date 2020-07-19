@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-
+import noImage from './NoImage.svg'
 /**
  * render image or spinner
  *
@@ -13,10 +13,7 @@ import React, { useEffect, useState, useRef } from 'react'
 function ImageSpinner(props) {
   const imageRef = useRef()
   const { customspinner, ...rest } = props
-  // let spinner = customspinner;
-  // const spinner = customspinner || <h1>Loading...</h1>
   const [loaded, setLoaded] = useState(false)
-  // const [localImage, setLocalImage] = useState();
   useEffect(() => {
     if (loaded) {
       Object.keys(rest).forEach((key) => {
@@ -32,8 +29,14 @@ function ImageSpinner(props) {
         // loading complete, image contains at least 1 pixel.
         imageRef.current = newImage // point reference to loaded image
         setLoaded(true) // toggle state
-        // setLocalImage(imageRef.current);
       }
+    }
+    // newImage.onerror = () => {
+    //   imageRef.current = <img src={noImage} alt='image not found' />
+    // }
+    newImage.onError = (e) => {
+      e.target.onerror = null
+      e.target.src = noImage
     }
     newImage.alt = 'preview image' // accessibility
     Object.keys(rest).forEach((key) => {
@@ -46,5 +49,4 @@ function ImageSpinner(props) {
     <img {...rest} ref={imageRef.current} />
   )
 }
-
 export default ImageSpinner
