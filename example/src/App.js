@@ -1,11 +1,12 @@
 import React from 'react'
-import { ImageSpinner } from 'nifty-components'
+import { ImageSpinner, Example } from 'nifty-components'
 // import logo from "./logo.svg";
-import './App.css'
+//import './App.css'
 
 function App() {
   return (
     <div className='App'>
+      <Example />
       <ImageSpinner
         src='https://placekitten.com/g/200/300'
         alt='desription'
