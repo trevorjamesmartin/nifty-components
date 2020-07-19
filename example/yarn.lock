@@ -6847,9 +6847,9 @@ nice-try@^1.0.4:
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
-nifty-components@../nifty-components-1.0.0.tgz:
-  version "1.0.0"
-  resolved "../nifty-components-1.0.0.tgz#8e9657cec5b21da506ea0204a0f4cd951815120a"
+nifty-components@../nifty-components-latest.tgz:
+  version "1.0.0-beta-1"
+  resolved "../nifty-components-latest.tgz#6049973a8313dbce69d7aa812dea2af38ef463c8"
 
 no-case@^3.0.3:
   version "3.0.3"
