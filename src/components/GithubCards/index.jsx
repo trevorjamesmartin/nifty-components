@@ -55,6 +55,11 @@ const ListCard = ({
   srcIcon,
   appIcon,
   spinner,
+  borderColorSelected,
+  borderColorNormal,
+  backgroundColor,
+  titleColor,
+  textColor,
   ...rest
 }) => {
   const [state, setState] = useState({
@@ -77,7 +82,12 @@ const ListCard = ({
     isSelected,
     isOpen,
     srcIcon,
-    appIcon
+    appIcon,
+    borderColorSelected,
+    borderColorNormal,
+    backgroundColor,
+    titleColor,
+    textColor
   })
   const palette = rest.palette || defaultPalette
   return (
@@ -193,7 +203,12 @@ const GithubCards = ({
   palette,
   srcIcon,
   appIcon,
-  spinner
+  spinner,
+  borderColorSelected,
+  borderColorNormal,
+  backgroundColor,
+  titleColor,
+  textColor
 }) => {
   const maxWidth = width || '42rem'
   const projects = projectlist || defaultProjectList
@@ -253,7 +268,12 @@ const GithubCards = ({
             portrait,
             srcIcon,
             appIcon,
-            spinner
+            spinner,
+            borderColorSelected,
+            borderColorNormal,
+            backgroundColor,
+            titleColor,
+            textColor
           })
       )}
     />
