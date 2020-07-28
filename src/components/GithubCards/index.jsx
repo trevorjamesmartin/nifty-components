@@ -156,7 +156,8 @@ const ListCard = ({
             padding: isOpen ? '0 2ch' : '0 0',
             // fontWeight: "bold",
             fontWeight: 500,
-            fontFamily: "'Fira Code', monospace"
+            fontFamily: "'Fira Code', monospace",
+            color: titleColor
           }}
         >
           {title || 'Hello World'}
@@ -166,7 +167,8 @@ const ListCard = ({
             padding: isOpen ? '0 2ch' : '0 0',
             fontSize: '1rem',
             fontFamily: "'Fira Code', monospace",
-            fontStyle: 'italic'
+            fontStyle: 'italic',
+            color: titleColor
           }}
         >
           {briefdesc || 'somewhere, on earth'}
@@ -175,7 +177,7 @@ const ListCard = ({
           style={{
             fontFamily: "'Montserrat', sans-serif",
             padding: isOpen ? '0 2ch' : '0 0',
-            color: 'darkslategrey'
+            color: textColor || 'darkslategrey'
           }}
         >
           {isOpen ? tldr || '#JS, #React' : '...'}
