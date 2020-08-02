@@ -95,7 +95,11 @@ const ListCard = ({
       key={key}
       id={`card-${key}`}
       name={`card-${key}`}
-      style={isOpen ? expandedStyle : parentStyle}
+      style={
+        isOpen
+          ? { ...expandedStyle, ...rest.style }
+          : { ...parentStyle, ...rest.style }
+      }
       onMouseEnter={() => selectCard(cardNumber)}
       onMouseLeave={() => selectCard(undefined)}
       onClick={(e) => {
@@ -105,16 +109,19 @@ const ListCard = ({
       }}
     >
       <div className='nifty-card-left list-view' style={leftStyle}>
-        <div style={imgFrameStyle}>
+        <div style={{ ...imgFrameStyle, ...rest.style }}>
           <ImageSpinner
-            style={imgStyle}
+            style={{ ...imgStyle, ...rest.style }}
             src={avatar || 'https://avatarfiles.alphacoders.com/289/289.jpg'}
             alt='avatar'
             customspinner={spinner || awesomeSpin}
           />
         </div>
         {isOpen ? (
-          <span className='nifty-card-links' style={linkStyle}>
+          <span
+            className='nifty-card-links'
+            style={{ ...linkStyle, ...rest.style }}
+          >
             <a
               href={sourceURL}
               alt='source code'
@@ -150,7 +157,10 @@ const ListCard = ({
           ''
         )}
       </div>
-      <main className='nifty-card-main list-view' style={mainStyle}>
+      <main
+        className='nifty-card-main list-view'
+        style={{ ...mainStyle, ...rest.style }}
+      >
         <p
           style={{
             padding: isOpen ? '0 2ch' : '0 0',
@@ -210,7 +220,8 @@ const GithubCards = ({
   borderColorNormal,
   backgroundColor,
   titleColor,
-  textColor
+  textColor,
+  ...rest
 }) => {
   const maxWidth = width || '42rem'
   const projects = projectlist || defaultProjectList
@@ -275,7 +286,8 @@ const GithubCards = ({
             borderColorNormal,
             backgroundColor,
             titleColor,
-            textColor
+            textColor,
+            style: rest.style || {}
           })
       )}
     />
